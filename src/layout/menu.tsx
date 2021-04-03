@@ -4,6 +4,7 @@ import tw, { styled } from "twin.macro";
 import Logo from "../components/icons/logo";
 import { debounce } from "../libs/helpers";
 import { useWindow } from "../libs/hooks";
+import { Path } from "./path";
 import {
     HamburgerButton,
     ImageWrapper,
@@ -12,20 +13,6 @@ import {
     MobileMenuUnorderedList,
     Nav,
 } from "./styles";
-
-const StyledNavLink = (props: NavLinkProps) => {
-    return (
-        <NavLink
-            {...props}
-            activeStyle={{
-                fontWeight: "bold",
-                color: "var(--color-primary)",
-            }}
-        >
-            {props.children}
-        </NavLink>
-    );
-};
 
 export const Menu = () => {
     const [openMobileMenu, setOpenMobileMenu] = useState<boolean>(false);
@@ -111,20 +98,7 @@ export const Menu = () => {
                 <Logo />
             </ImageWrapper>
             <MenuUnorderedList>
-                <MenuList>
-                    <StyledNavLink exact to="/">
-                        Home
-                    </StyledNavLink>
-                </MenuList>
-                <MenuList>
-                    <StyledNavLink to="/product">Product</StyledNavLink>
-                </MenuList>
-                <MenuList>
-                    <StyledNavLink to="/about">About</StyledNavLink>
-                </MenuList>
-                <MenuList>
-                    <StyledNavLink to="/contact">Contact</StyledNavLink>
-                </MenuList>
+                <Path />
             </MenuUnorderedList>
 
             {/* dropdown mobile menu */}
@@ -140,20 +114,7 @@ export const Menu = () => {
                     <MenuList>Weddings</MenuList>
                     <MenuList>Corporate Events</MenuList>
                     <MenuList>Private Events</MenuList>
-                    <MenuList>
-                        <StyledNavLink exact to="/">
-                            Home
-                        </StyledNavLink>
-                    </MenuList>
-                    <MenuList>
-                        <StyledNavLink to="/product">Product</StyledNavLink>
-                    </MenuList>
-                    <MenuList>
-                        <StyledNavLink to="/about">About</StyledNavLink>
-                    </MenuList>
-                    <MenuList>
-                        <StyledNavLink to="/contact">Contact</StyledNavLink>
-                    </MenuList>
+                    <Path />
                 </MobileMenuUnorderedList>
             </div>
         </Nav>
