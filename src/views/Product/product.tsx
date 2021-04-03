@@ -107,18 +107,20 @@ export const Product = () => {
                 {renderProducts()}
                 {/* pagination */}
                 <PaginationCursorWrapper>
-                    {igMedia?.paging.hasOwnProperty("previous") && (
+                    {igMedia?.paging?.hasOwnProperty("previous") && (
                         <PaginationSpan
                             onClick={() =>
-                                setPageString(igMedia?.paging.previous!)
+                                setPageString(igMedia?.paging?.previous!)
                             }
                         >
                             <BsChevronLeft size={24} />
                         </PaginationSpan>
                     )}
-                    {igMedia?.paging.hasOwnProperty("next") && (
+                    {igMedia?.paging?.hasOwnProperty("next") && (
                         <PaginationSpan
-                            onClick={() => setPageString(igMedia?.paging.next!)}
+                            onClick={() =>
+                                setPageString(igMedia?.paging?.next!)
+                            }
                         >
                             <BsChevronRight size={24} />
                         </PaginationSpan>
