@@ -67,6 +67,35 @@ export const Product = () => {
         setOpenModal(true);
     };
 
+    const renderProducts = () => {
+        if (igMedia && igMedia.data?.length > 0) {
+            return (
+                <ProductUL>
+                    <Suspense fallback={<h2>Loading...</h2>}>
+                        {igMedia.data.map((product, index) => {
+                            return (
+                                <ProductList key={product.id}>
+                                    <ProductCardComponent
+                                        product={product}
+                                        handleProductMedia={handleProductMedia}
+                                        index={index}
+                                    />
+                                </ProductList>
+                            );
+                        })}
+                    </Suspense>
+                </ProductUL>
+            );
+        } else {
+            return (
+                <>
+                    <h2>Sorry we have an error</h2>
+                    <p>Please try refresh your browser again</p>
+                </>
+            );
+        }
+    };
+
     return (
         <>
             <Header>
@@ -75,25 +104,7 @@ export const Product = () => {
                 </ContactTitle>
             </Header>
             <ProductSection>
-                <ProductUL>
-                    <Suspense fallback={<h2>Loading...</h2>}>
-                        {igMedia &&
-                            igMedia.data.length > 0 &&
-                            igMedia.data.map((product, index) => {
-                                return (
-                                    <ProductList key={product.id}>
-                                        <ProductCardComponent
-                                            product={product}
-                                            handleProductMedia={
-                                                handleProductMedia
-                                            }
-                                            index={index}
-                                        />
-                                    </ProductList>
-                                );
-                            })}
-                    </Suspense>
-                </ProductUL>
+                {renderProducts()}
                 {/* pagination */}
                 <PaginationCursorWrapper>
                     {igMedia?.paging.hasOwnProperty("previous") && (
