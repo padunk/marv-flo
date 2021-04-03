@@ -20,6 +20,7 @@ const CustomStyles = createGlobalStyle`
 const GlobalStyles = () => (
     <>
         <BaseStyles />
+        {/* @ts-ignore */}
         <CustomStyles />
     </>
 );
