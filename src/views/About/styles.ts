@@ -35,6 +35,6 @@ export const AboutTitle = tw.h1`text-white text-4xl text-center w-96 relative z-
 export const AboutSection = tw.section`bg-gray-50 pb-8 flex flex-col items-center`;
 export const Wrapper = tw.div`py-8`;
 export const AboutSubtitle = tw.h2`text-yellow-600 text-center text-3xl`;
-export const AboutArticle = tw.article`mx-auto max-w-prose py-4 text-gray-600`;
+export const AboutArticle = tw.article`mx-auto max-w-prose py-4 px-4  text-gray-600`;
 export const ArticleText = tw.p`pb-4 text-justify`;
 export const DownloadButton = tw.button`rounded-full uppercase py-2 px-4 border border-gray-500 mx-auto block text-gray-600 hover:text-gray-50 hover:bg-gray-800`;
