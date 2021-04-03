@@ -28,7 +28,7 @@ export const Path = () => {
     return (
         <>
             {routes.map((route) => (
-                <MenuList>
+                <MenuList key={route.label}>
                     <StyledNavLink exact to={route.to}>
                         {route.label}
                     </StyledNavLink>
