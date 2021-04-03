@@ -89,11 +89,11 @@ export const Menu = () => {
                     </svg>
                 </HamburgerButton>
             </div>
-            <MenuUnorderedList>
+            {/* <MenuUnorderedList>
                 <MenuList>Weddings</MenuList>
                 <MenuList>Corporate Events</MenuList>
                 <MenuList>Private Events</MenuList>
-            </MenuUnorderedList>
+            </MenuUnorderedList> */}
             <ImageWrapper>
                 <Logo />
             </ImageWrapper>
@@ -111,9 +111,9 @@ export const Menu = () => {
                 <MobileMenuUnorderedList
                     style={{ backdropFilter: "blur(5px)" }}
                 >
-                    <MenuList>Weddings</MenuList>
+                    {/* <MenuList>Weddings</MenuList>
                     <MenuList>Corporate Events</MenuList>
-                    <MenuList>Private Events</MenuList>
+                    <MenuList>Private Events</MenuList> */}
                     <Path />
                 </MobileMenuUnorderedList>
             </div>
